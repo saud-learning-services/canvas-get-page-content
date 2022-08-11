@@ -1,4 +1,21 @@
 
+# Canvas Get Page Content
+
+## Summary
+This script will extract Canvas page html, and module / item information associated with a given page (if any) for an entire Canvas course. The predicted read time of each page is also provided, using the [readtime](https://pypi.org/project/readtime/) project.
+
+## Input
+
+> Input is entered as terminal arguments: {COURSE_ID} {WPM}
+- Canvas course id
+- Optional: words per minute for the read time calculaton
+  
+## Output
+
+A csv ...
+
+## Getting Started
+
 #### First Time
 
 1. Ensure you have [conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html) installed (Python 3.9 version)
@@ -26,3 +43,7 @@ Example instance = 'https://ubc.instructure.com'
    >     - `$ python src/get_page_content.py 99999 200`
    > - i.e) if my course id is 900, but I want to use the default words per minute
    >     - `$ python src/get_page_content.py 900`
+
+# ✨ Acknowledgements ✨
+
+I want to thank and acknowledge the [contributors](https://github.com/alanhamlett/readtime/blob/master/AUTHORS) to [readtime](https://pypi.org/project/readtime/), which this project uses to calculate page read time! 
