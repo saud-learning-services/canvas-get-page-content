@@ -1,4 +1,4 @@
-name: do-stuff
+name: canvas-get-page-content
 channels:
   - conda-forge
   - anaconda
