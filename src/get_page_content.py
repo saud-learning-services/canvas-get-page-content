@@ -2,9 +2,11 @@ from helpers import create_instance
 import os
 from dotenv import load_dotenv
 import sys
-from util import shut_down
+from util import shut_down, print_success
 import pandas as pd
 import readtime
+from readtime.utils import DEFAULT_WPM
+
 
 load_dotenv()
 
@@ -23,6 +25,7 @@ def get_course_id():
 
     except Exception as e:
         shut_down(f"Enter a course id in .env or as argument!")
+
 
 def create_page_readtime_df(canvas, course_id, WPM):
     """ Creates a dataframe that includes page, 
@@ -129,9 +132,18 @@ def main():
     canvas = create_instance(API_URL, API_KEY)
     course_id = get_course_id()
 
-    WPM = 200
+    WPM = DEFAULT_WPM
+    
+    if len(sys.argv) == 3:
+        if sys.argv[2]:
+            WPM = sys.argv[2]
+            print_success(f"The words per minute have been set to {WPM}.")
+
+    else:
+        print(f"The words per minute have not been set. Using package standard {WPM}.")
+
     df = create_page_readtime_df(canvas, course_id, WPM)
-    df.to_csv(f"{course_id}_pageinfo.csv", index=False)
+    df.to_csv(f"data/{course_id}_pageinfo_{WPM}.csv", index=False)
 
     
 

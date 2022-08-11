@@ -14,4 +14,5 @@ data/*
 # test ipynb
 test.ipynb
 
+# any csvs
 *.csv

@@ -6,14 +6,19 @@
 3. Import environment (once): `$ conda env create -f environment.yml`
 4. Create .env file and include:
 
+Note - anything in {SQUIGLY BRACES} means you must use your own values
 ```
-API_TOKEN = ''
-API_INSTANCE = 'https://ubc.instructure.com'
+API_TOKEN = {my-api-token}
+API_INSTANCE = {my-instance, example 'https://ubc.instructure.com'}
 ```
 
 #### Every Time
 
 1. Run:
-   1. navigate to your directory `$ cd YOUR_PATH/{canvas-get-page-content-NAME}`
-   1. activate the environment (see step 3 on first run) `$ conda activate do-stuff`
-   1. run the script and follow prompts in terminal `$ python src/do-stuff.py`
+   1. navigate to your directory `$ cd YOUR_PATH/canvas-get-page-content`
+   1. activate the environment (see step 3 on first run) `$ conda activate canvas-get-page-content`
+   1. run the script and follow prompts in terminal `$ python src/get_page_content.py {COURSE_ID} {WPM - optional}`
+   
+   > When you run the script, you need to enter the course id as an input, and you can enter a new words per minute (standard is set at 265) if desired.
+   > i.e) if my course id is 99999, and I want to use a words per minute of 200 `python src/get_page_content.py 99999 200`
+   > i.e) if my course id is 900, but I want to use the default words per minute `python src/get_page_content.py 900`
