@@ -16,3 +16,5 @@ test.ipynb
 
 # any csvs
 *.csv
+
+project_notes/*
