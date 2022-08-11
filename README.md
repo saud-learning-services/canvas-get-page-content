@@ -1,5 +1,6 @@
 
 # Canvas Get Page Content
+> WIP! Questions? Ask Alison - alison.myers@sauder.ubc.ca
 
 ## Summary
 This script will extract Canvas page html, and module / item information associated with a given page (if any) for an entire Canvas course. The predicted read time of each page is also provided, using the [readtime](https://pypi.org/project/readtime/) project.
