@@ -45,6 +45,8 @@ Example instance = 'https://ubc.instructure.com'
    > - i.e) if my course id is 900, but I want to use the default words per minute
    >     - `$ python src/get_page_content.py 900`
 
-# ✨ Acknowledgements ✨
+---
+
+## ✨ Acknowledgements ✨
 
 I want to thank and acknowledge the [contributors](https://github.com/alanhamlett/readtime/blob/master/AUTHORS) to [readtime](https://pypi.org/project/readtime/), which this project uses to calculate page read time! 
