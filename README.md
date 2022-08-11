@@ -23,6 +23,6 @@ Example instance = 'https://ubc.instructure.com'
    
    > When you run the script, you need to enter the course id as an input, and you can enter a new words per minute (standard is set at 265) if desired.
    > -  i.e) if my course id is 99999, and I want to use a words per minute of 200
-   > `$ python src/get_page_content.py 99999 200`
+   >     - `$ python src/get_page_content.py 99999 200`
    > - i.e) if my course id is 900, but I want to use the default words per minute
-   > `$ python src/get_page_content.py 900`
+   >     - `$ python src/get_page_content.py 900`
