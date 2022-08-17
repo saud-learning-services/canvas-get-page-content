@@ -13,7 +13,28 @@ This script will extract Canvas page html, and module / item information associa
   
 ## Output
 
-A csv ...
+### {COURSE_ID}_pageinfo.csv
+
+
+Column | Description | Note
+---------|----------|---------
+ page_id | The Canvas Page ID | Not the same as module_item_id
+ page_html_url | The full url to the given page | 
+ page_url | The page url extension | In Canvas, this is designated by the title of the page (will change if page title changes)
+ page_published | Boolean - whether the page is published |
+ page_title | The page title |
+ page_readtime | The estimated readtime of the page (rounded to minute, minimum 1 minute) | Calculation from [readtime](https://pypi.org/project/readtime/) with either default or given Words per Minute
+ page_readtime_secs | The estimated readtime of the page in seconds | Calculation from [readtime](https://pypi.org/project/readtime/) with either default or given Words per Minute
+ page_body | The html of the page |
+ item_id | If the page is a Canvas item, the item id, otherwise empty | A Canvas item (module item) is a page that is part of a module
+ item_title | If the page is a Canvas item, the title, otherwise empty | Should be the same as the page_title 
+ item_url | If the page is a Canvas item, the url, otherwise empty |  The item_url uses the item_id in the url
+ item_position | The position of the page within a module | 
+ module_id | The module id of the associated module | Must be a Canvas item to have a module id
+ module_published | Boolean - whether the module is published |
+ module_position | The position of the module (relative to other modules) |
+
+ > In Canvas a "page" can be associated with a module, when this is the case there are additional associations with the page - it is now also a module item and has module information. 
 
 ## Getting Started
 
