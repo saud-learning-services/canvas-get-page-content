@@ -1,6 +1,8 @@
 from canvasapi import Canvas
 import util
 import sys
+import requests
+import json
 
 
 def create_instance(API_URL, API_KEY):
@@ -32,3 +34,32 @@ def _get_course(canvas_obj, course_id):
         )
 
     return course
+
+def _get_request(AUTH_HEADER, API_URL, URL_REQUEST, JSON_FIELD):
+    """ Gets Canvas data using standard request call (instead of 
+        canvasapi call, when not available). Handles pagination. Returns json.
+    """
+
+
+    results = []
+
+    try:     
+        url = "{}/api/v1/{}".format(API_URL, URL_REQUEST)
+        print(url)
+        response = requests.get(url, headers=AUTH_HEADER, params={'per_page':50})
+        
+        data = json.loads(response.text).get(JSON_FIELD)
+        for i in data:
+            results.append(i)
+                
+        while response.links["current"]["url"] != response.links["last"]["url"]:
+            response = requests.get(response.links["next"]["url"], headers=AUTH_HEADER, params={'per_page':50})
+                
+            data = json.loads(response.text).get(JSON_FIELD)
+            for i in data:
+                results.append(i)
+        
+        return(results)
+        
+    except Exception as se:
+        print(f'error {se}')
