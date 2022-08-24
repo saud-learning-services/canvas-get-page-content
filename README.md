@@ -13,8 +13,8 @@ This script will extract Canvas page html, and module / item information associa
   
 ## Output
 
-### {COURSE_ID}_pageinfo.csv
-
+### {COURSE_ID}_pageinfo _{WPM}.csv
+> i.e) 1000_pageinfo_200.csv (course id: 1000, wpm: 200)
 
 Column | Description | Note
 ---------|----------|---------
