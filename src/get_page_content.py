@@ -142,7 +142,7 @@ def main():
     else:
         print(f"The words per minute have not been set. Using package standard {WPM}.")
 
-    df = create_page_readtime_df(canvas, course_id, WPM)
+    df = create_page_readtime_df(canvas, course_id, int(WPM))
     df.to_csv(f"data/{course_id}_pageinfo_{WPM}.csv", index=False)
 
     
